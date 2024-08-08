@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="icon" href="assets/img/icon.png" type="image/png"> <!-- Website icon -->
+    <link rel="stylesheet" href="assets/css/studentpage.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <header>
+        <img src="assets/img/studentpage.png" alt="Website Icon" style="width: 40px;">
+        <h1>Dashboard</h1>
+        <button class="menu-button" onclick="toggleMenu()">
+            <div class="menu__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </header>
+
+    <div class="overlay" id="overlay"></div> <!-- Overlay element -->
+
+    <div class="side-menu" id="sideMenu">
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('dashboard')">Dashboard</a>
+        <a href="#" onclick="showSection('notifications')">Notifications</a>
+        <a href="#" onclick="showSection('settings')">Settings</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+
+    <div class="container">
+        <div class="profile">
+            <h2>Profile</h2>
+            <p><strong>Name:</strong> <span id="student-name"></span></p>
+            <p><strong>Email:</strong> <span id="student-email"></span></p>
+            <p><strong>Enrolled Since:</strong> <span id="student-enrollment-date"></span></p>
+        </div>
+
+        <div class="courses">
+            <h2>Available Courses</h2>
+            <div class="course-cards" id="course-cards">
+                <!-- Course cards will be dynamically added here -->
+            </div>
+        </div>
+
+        <div class="progress">
+            <h2>Course Progress</h2>
+            <div class="progress-cards" id="progress-cards">
+                <!-- Progress cards will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/studentpage.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application</title>
+    <link rel="stylesheet" href="assets/css/crud.css">
+</head>
+<body>
+    <header>
+        <h1>CRUD Application</h1>
+        <nav>
+            <ul>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#student">Student</a></li>
+                <li><a href="#enrollments">Enrollments</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="courses">
+            <h2>Courses</h2>
+            <form id="create-course-form">
+                <input type="text" name="course_name" placeholder="Course Name" required>
+                <input type="text" name="description" placeholder="Description" required>
+                <input type="text" name="instructor" placeholder="Instructor" required>
+                <input type="number" name="duration" placeholder="Duration (days)" required>
+                <input type="date" name="start_date" required>
+                <input type="date" name="end_date" required>
+                <input type="text" name="course_image" placeholder="Course Image URL">
+                <button type="submit">Create Course</button>
+            </form>
+            <ul id="course-list" class="item-list"></ul>
+        </section>
+
+        <section id="student">
+            <h2>Student</h2>
+            <form id="create-student-form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="date" name="date_of_birth" required>
+                <input type="text" name="address" placeholder="Address" required>
+                <input type="tel" name="phone_number" placeholder="Phone Number" required>
+                <input type="text" name="profile_picture" placeholder="Profile Picture URL">
+                <button type="submit">Create Student</button>
+            </form>
+            <ul id="student-list" class="item-list"></ul>
+        </section>
+
+        <section id="enrollments">
+            <h2>Enrollments</h2>
+            <form id="enroll-student-form">
+                <select name="student_id" required>
+                    <!-- Students options will be dynamically loaded here -->
+                </select>
+                <select name="course_id" required>
+                    <!-- Courses options will be dynamically loaded here -->
+                </select>
+                <button type="submit">Enroll</button>
+            </form>
+            <ul id="enrollment-list" class="item-list"></ul>
+        </section>
+    </main>
+
+    <!-- Modal for editing -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Edit Item</h2>
+            <form id="edit-form"></form>
+        </div>
+    </div>
+
+    <script src="assets/js/crud.js"></script>
+</body>
+</html>
