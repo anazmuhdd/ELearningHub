@@ -30,4 +30,11 @@ document.getElementById('admin-link').addEventListener('click', (event) => {
     event.preventDefault();
     window.location.href = 'admin.html';
 });
-
+document.getElementById('about-link').addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.href = 'aboutus.html';
+});
+document.getElementById('contactus').addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.href = 'contactus.html';
+});

@@ -1,0 +1,55 @@
+/* Existing styles here */
+
+/* About Page Styles */
+.about {
+    margin-top: 100px;
+    width: 90%;
+    max-width: 1200px;
+    text-align: center;
+    padding: 20px;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #4a90e2;
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-card {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 65, 108, 0.5);
+    background: #ff416c;
+    color: white;
+}
+
+.team-card h3 {
+    margin-bottom: 10px;
+    color: #4a90e2;
+    font-size: 24px;
+}
+
+.team-card p {
+    font-size: 18px;
+    color: #555;
+}
+
+.team-card:hover h3, .team-card:hover p {
+    color: white;
+}
