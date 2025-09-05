@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const courseCardsContainer = document.querySelector(".course-cards");
 
-  fetch("http://localhost:3000/api/courses")
+  fetch("https://e-learning-hub-three.vercel.app/api/courses")
     .then((response) => response.json())
     .then((courses) => {
       courses.forEach((course) => {

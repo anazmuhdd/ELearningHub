@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const loadCourses = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/courses");
+      const response = await fetch(
+        "https://e-learning-hub-three.vercel.app/api/courses"
+      );
       const courses = await handleResponse(response);
       const courseList = document.getElementById("course-list");
       const courseSelect = document.querySelector('select[name="course_id"]');
@@ -56,7 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const loadStudents = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/students");
+      const response = await fetch(
+        "https://e-learning-hub-three.vercel.app/api/students"
+      );
       const students = await handleResponse(response);
       const studentList = document.getElementById("student-list");
       const studentSelect = document.querySelector('select[name="student_id"]');
@@ -85,7 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const loadEnrollments = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/enrollments");
+      const response = await fetch(
+        "https://e-learning-hub-three.vercel.app/api/enrollments"
+      );
       const enrollments = await handleResponse(response);
       const enrollmentList = document.getElementById("enrollment-list");
       enrollmentList.innerHTML = "";
@@ -121,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const courseData = Object.fromEntries(formData.entries());
       try {
         const response = await fetch(
-          "http://localhost:3000/api/courses/create",
+          "https://e-learning-hub-three.vercel.app/api/courses/create",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -156,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         const response = await fetch(
-          "http://localhost:3000/api/students/register",
+          "https://e-learning-hub-three.vercel.app/api/students/register",
           {
             method: "POST",
             headers: {
@@ -200,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const enrollmentData = Object.fromEntries(formData.entries());
       try {
         const response = await fetch(
-          "http://localhost:3000/api/enrollments/enroll",
+          "https://e-learning-hub-three.vercel.app/api/enrollments/enroll",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -218,7 +224,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const handleEdit = async (id, type) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/${type}s/${id}`);
+      const response = await fetch(
+        `https://e-learning-hub-three.vercel.app/api/${type}s/${id}`
+      );
       if (response.ok) {
         const item = await response.json();
         const form = document.getElementById("edit-form");
@@ -244,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const updatedData = Object.fromEntries(formData.entries());
           try {
             const response = await fetch(
-              `http://localhost:3000/api/${type}s/${id}`,
+              `https://e-learning-hub-three.vercel.app/api/${type}s/${id}`,
               {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
@@ -277,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (confirm(`Are you sure you want to delete this ${type}?`)) {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/${type}s/${id}`,
+          `https://e-learning-hub-three.vercel.app/api/${type}s/${id}`,
           {
             method: "DELETE",
           }
