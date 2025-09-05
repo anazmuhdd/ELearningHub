@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     // Fetch student details
     const studentResponse = await fetch(
-      `http://localhost:3000/api/students/${studentId}`,
+      `https://e-learning-hub-three.vercel.app/api/students/${studentId}`,
       {
         method: "GET",
         headers: {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       // Fetch enrolled courses
       const enrollmentsResponse = await fetch(
-        `http://localhost:3000/api/enrollments/student/${studentId}`,
+        `https://e-learning-hub-three.vercel.app/api/enrollments/student/${studentId}`,
         {
           headers: {
             Authorization: `Bearer ${studentId}`,

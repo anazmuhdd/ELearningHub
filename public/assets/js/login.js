@@ -17,7 +17,7 @@ document
     event.preventDefault();
 
     const formData = new FormData(this);
-    fetch("http://localhost:3000/api/students/signin", {
+    fetch("https://e-learning-hub-three.vercel.app/api/students/signin", {
       method: "POST",
       body: JSON.stringify({
         email: formData.get("email"),
@@ -63,7 +63,7 @@ document
       profile_picture: formData.get("profile_picture"), // Ensure this is Base64 or URL
     };
 
-    fetch("http://localhost:3000/api/students/register", {
+    fetch("https://e-learning-hub-three.vercel.app/api/students/register", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
